@@ -171,7 +171,7 @@ public class GameArea extends JPanel{
 
         block.rotate();
 
-        if (block.getX() < 0) block.setX(0);
+        if (block.getLeftEdge() < 0) block.setX(0);
         if (block.getRightEdge() >= gridColumns) block.setX(gridColumns - block.getWidth());
         if (block.getBottomEdge() >= gridRows) block.setY( gridRows - block.getHeight());
 
@@ -179,8 +179,8 @@ public class GameArea extends JPanel{
         boolean collision = false;
         for (int row = 0; row < block.getHeight(); row++) {
             for (int col = 0; col < block.getWidth(); col++) {
-                if (block.getShape()[row][col] != 0 && 
-                    background[col + block.getX()][row + block.getY()] != null) {
+                if (block.getShape()[row][col] != 0 &&
+                    background[row + block.getY()][col + block.getX()] != null) {
                     collision = true;
                     break;
                 }
@@ -246,7 +246,7 @@ public class GameArea extends JPanel{
                 repaint();
             }
         }
-        return clearedLines;
+        return clearedLines * 100;
     }
 
     public void clearLine(int row) {

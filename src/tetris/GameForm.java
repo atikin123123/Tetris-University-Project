@@ -11,7 +11,7 @@ import javax.swing.KeyStroke;
 
 public class GameForm extends JFrame{
     private int x = 1024;
-    private int y = 730;
+    private int y = 768;
 
     private GameArea ga;
     private GameThread gt;

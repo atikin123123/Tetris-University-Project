@@ -1,9 +1,5 @@
 package tetris;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,6 +23,7 @@ public class GFGUI {
         gf.setTitle("Tetris");
         gf.setSize(x, y);
         gf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gf.setResizable(false);
 
         gf.setBackground(Color.decode("#f4c064"));
 
@@ -64,7 +61,8 @@ public class GFGUI {
 
 
         rightPanel.add(btnMainMenu, BorderLayout.SOUTH);
-        btnMainMenu.setBounds(10, 10, 100, 50); // Позиция и размеры
+        btnMainMenu.setPreferredSize(new Dimension(150, 50));
+        btnMainMenu.setMargin(new Insets(10, 20, 15, 20));
         btnMainMenu.setBackground(Color.decode("#ffffff"));
         btnMainMenu.setForeground(Color.decode("#1b1b1b"));
         btnMainMenu.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 14));
@@ -95,14 +93,14 @@ public class GFGUI {
 
         // Разделяем окно на левую и правую части
         JSplitPane splitPane = new JSplitPane(
-            JSplitPane.HORIZONTAL_SPLIT, 
+            JSplitPane.HORIZONTAL_SPLIT,
             ga,
             rightPanel
         );
         splitPane.setDividerLocation(500);
-        splitPane.setDividerSize(0); 
+        splitPane.setDividerSize(0);
         splitPane.setEnabled(false);
-        
+
         gf.add(splitPane, BorderLayout.CENTER);
     }
 }

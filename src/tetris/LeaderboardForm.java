@@ -40,6 +40,7 @@ public class LeaderboardForm extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("Tetris");
         this.setSize(1024, 768);
+        this.setResizable(false);
 
         JButton backButton = new JButton("Main Menu");
         backButton.setBounds(10, 10, 100, 30); // Позиция и размеры

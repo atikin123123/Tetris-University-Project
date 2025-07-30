@@ -9,7 +9,7 @@ public class GameThread extends Thread {
     private int scorePerLevel = 3;
     private static int counter = 0;
 
-    private int pause = 1000000;
+    private int pause = 1000;
     private int speedupPerLevel = 50;
 
     public GameThread(GameArea ga, GameForm gf) {
